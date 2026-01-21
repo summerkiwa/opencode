@@ -216,20 +216,20 @@ function App() {
     if (!terminalTitleEnabled() || Flag.OPENCODE_DISABLE_TERMINAL_TITLE) return
 
     if (route.data.type === "home") {
-      renderer.setTerminalTitle("OpenCode")
+      renderer.setTerminalTitle("RachelKiwa")
       return
     }
 
     if (route.data.type === "session") {
       const session = sync.session.get(route.data.sessionID)
       if (!session || SessionApi.isDefaultTitle(session.title)) {
-        renderer.setTerminalTitle("OpenCode")
+        renderer.setTerminalTitle("RachelKiwa")
         return
       }
 
       // Truncate title to 40 chars max
       const title = session.title.length > 40 ? session.title.slice(0, 37) + "..." : session.title
-      renderer.setTerminalTitle(`OC | ${title}`)
+      renderer.setTerminalTitle(`RK | ${title}`)
     }
   })
 
@@ -580,7 +580,7 @@ function App() {
         DialogAlert.show(
           dialog,
           "Warning",
-          "While openrouter is a convenient way to access LLMs your request will often be routed to subpar providers that do not work well in our testing.\n\nFor reliable access to models check out OpenCode Zen\nhttps://opencode.ai/zen",
+          "While openrouter is a convenient way to access LLMs your request will often be routed to subpar providers that do not work well in our testing.\n\nFor reliable access to models check out RachelKiwa Zen\nhttps://opencode.ai/zen",
         ).then(() => kv.set("openrouter_warning", true))
       })
     }
@@ -642,7 +642,7 @@ function App() {
     toast.show({
       variant: "info",
       title: "Update Available",
-      message: `OpenCode v${evt.properties.version} is available. Run 'opencode upgrade' to update manually.`,
+      message: `RachelKiwa v${evt.properties.version} is available. Run 'opencode upgrade' to update manually.`,
       duration: 10000,
     })
   })

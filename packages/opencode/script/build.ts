@@ -97,7 +97,7 @@ const targets = singleFlag
 
       return true
     })
-  : allTargets
+  : allTargets.filter((t) => t.os === "darwin" || t.os === "win32")
 
 await $`rm -rf dist`
 
@@ -139,7 +139,7 @@ for (const item of targets) {
       autoloadTsconfig: true,
       autoloadPackageJson: true,
       target: name.replace(pkg.name, "bun") as any,
-      outfile: `dist/${name}/bin/opencode`,
+      outfile: `dist/${name}/bin/rkcode`,
       execArgv: [`--user-agent=opencode/${Script.version}`, "--use-system-ca", "--"],
       windows: {},
     },

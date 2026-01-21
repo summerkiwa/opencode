@@ -412,7 +412,7 @@ export namespace ACP {
           "terminal-auth": {
             command: "opencode",
             args: ["auth", "login"],
-            label: "OpenCode Login",
+            label: "RachelKiwa Login",
           },
         }
       }
@@ -432,7 +432,7 @@ export namespace ACP {
         },
         authMethods: [authMethod],
         agentInfo: {
-          name: "OpenCode",
+          name: "RachelKiwa",
           version: Installation.VERSION,
         },
       }
@@ -705,7 +705,7 @@ export namespace ACP {
           }
         } else if (part.type === "file") {
           // Replay file attachments as appropriate ACP content blocks.
-          // OpenCode stores files internally as { type: "file", url, filename, mime }.
+          // RachelKiwa stores files internally as { type: "file", url, filename, mime }.
           // We convert these back to ACP blocks based on the URL scheme and MIME type:
           // - file:// URLs → resource_link
           // - data: URLs with image/* → image block
